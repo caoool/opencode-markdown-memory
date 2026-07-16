@@ -1,6 +1,6 @@
 {
   "name": "opencode-omni-memory-plugin",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Native, local, Git-friendly long-term memory and project continuity for OpenCode: a global skill, companion plugin, slash commands, and instruction wiring.",
   "keywords": [
     "opencode",
@@ -21,9 +21,13 @@
   },
   "license": "MIT",
   "author": "caoool",
-  "type": "commonjs",
+  "type": "module",
+  "main": "./plugins/omni-memory.js",
+  "exports": {
+    ".": "./plugins/omni-memory.js"
+  },
   "bin": {
-    "opencode-omni-memory-plugin": "bin/cli.js"
+    "opencode-omni-memory-plugin": "bin/cli.cjs"
   },
   "files": [
     "bin/",
@@ -41,6 +45,9 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "peerDependencies": {
+    "@opencode-ai/plugin": ">=1.17.0"
   },
   "publishConfig": {
     "access": "public",

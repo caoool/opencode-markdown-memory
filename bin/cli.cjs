@@ -2,7 +2,11 @@
 "use strict";
 
 /**
- * npm entry point for opencode-omni-memory-plugin.
+ * CLI entry point (opencode-omni-memory-plugin binary) for install.sh.
+ *
+ * This is a .cjs file because the package is type:module (so the package's
+ * main entry can be imported as an OpenCode plugin), while this wrapper uses
+ * CommonJS require().
  *
  * Delegates to the bundled install.sh, which already resolves its own script
  * directory as the install source (the SCRIPT_DIR branch in prepare_source),
